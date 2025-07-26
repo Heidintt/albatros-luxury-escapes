@@ -1,9 +1,14 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Calendar, Users, Star, Compass, Heart, Globe, Mountain, Camera } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { 
+  MapPin, Calendar, Users, Star, Compass, Heart, Globe, Mountain, Camera, 
+  Phone, Mail, Clock, Award, Shield, Headphones, Plane, Map, 
+  Quote, ArrowRight, Play, CheckCircle, TrendingUp
+} from "lucide-react";
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -12,77 +17,208 @@ const Home = () => {
   const heroSlides = [
     {
       image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-      title: "Explore the World with Us",
-      subtitle: "Unforgettable journeys, unique experiences"
+      title: "Discover Extraordinary Adventures",
+      subtitle: "Premium travel experiences crafted for the discerning explorer",
+      cta: "Start Your Journey"
     },
     {
       image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
-      title: "Wild Nature Awaits You",
-      subtitle: "From high mountains to deep blue oceans"
+      title: "Luxury Mountain Expeditions",
+      subtitle: "Conquer peaks with world-class guides and premium accommodations",
+      cta: "Explore Mountains"
     },
     {
       image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
-      title: "Unlimited Adventures",
-      subtitle: "Creating the most memorable experiences"
+      title: "Tropical Paradise Getaways",
+      subtitle: "Escape to pristine beaches and crystal-clear waters",
+      cta: "Book Paradise"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
+      title: "Cultural Heritage Tours",
+      subtitle: "Immerse yourself in ancient traditions and timeless beauty",
+      cta: "Discover Culture"
     }
   ];
 
   const featuredDestinations = [
     {
       id: 1,
-      name: "Swiss Alps",
+      name: "Swiss Alps Adventure",
       image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
-      price: "$2,890",
-      duration: "7 days 6 nights",
+      price: "$3,890",
+      originalPrice: "$4,500",
+      duration: "8 days 7 nights",
       rating: 4.9,
-      description: "Discover the majestic beauty of the Alps"
+      reviews: 127,
+      description: "Luxury alpine experience with helicopter tours and Michelin-starred dining",
+      highlights: ["Helicopter Tours", "5-Star Hotels", "Private Guide"],
+      difficulty: "Moderate",
+      groupSize: "8-12 people"
     },
     {
       id: 2,
-      name: "Maldives",
+      name: "Maldives Ultimate Luxury",
       image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
-      price: "$3,320",
-      duration: "5 days 4 nights",
+      price: "$5,320",
+      originalPrice: "$6,200",
+      duration: "6 days 5 nights",
       rating: 4.8,
-      description: "Tropical paradise with crystal clear waters"
+      reviews: 203,
+      description: "Overwater villas with private butler service and world-class spa",
+      highlights: ["Overwater Villa", "Private Butler", "Spa Treatments"],
+      difficulty: "Relaxing",
+      groupSize: "2-4 people"
     },
     {
       id: 3,
-      name: "Iceland",
+      name: "Iceland Northern Lights",
       image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-      price: "$2,420",
-      duration: "6 days 5 nights",
+      price: "$4,420",
+      originalPrice: "$5,100",
+      duration: "7 days 6 nights",
       rating: 4.7,
-      description: "Land of ice and fire with Aurora Borealis"
+      reviews: 156,
+      description: "Chase the Aurora Borealis with expert photographers and luxury lodges",
+      highlights: ["Aurora Hunting", "Photo Workshop", "Luxury Lodges"],
+      difficulty: "Easy",
+      groupSize: "6-10 people"
     }
   ];
 
-  const experiences = [
+  const testimonials = [
     {
-      icon: Mountain,
-      title: "Adventure Travel",
-      description: "Mountain climbing, trekking and exploring wild destinations"
+      id: 1,
+      name: "Sarah Johnson",
+      location: "New York, USA",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+      rating: 5,
+      text: "Absolutely incredible experience! The attention to detail and luxury accommodations exceeded all expectations. Our guide was knowledgeable and the itinerary was perfectly planned.",
+      trip: "Swiss Alps Adventure"
     },
     {
-      icon: Camera,
-      title: "Photography Tours",
-      description: "Capture the most beautiful moments of your journey"
+      id: 2,
+      name: "Michael Chen",
+      location: "Singapore",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      rating: 5,
+      text: "The Maldives trip was pure magic. Every moment was carefully curated, from the overwater villa to the private dining experiences. Simply unforgettable!",
+      trip: "Maldives Ultimate Luxury"
+    },
+    {
+      id: 3,
+      name: "Emma Thompson",
+      location: "London, UK",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      rating: 5,
+      text: "Witnessing the Northern Lights was a dream come true. The photography workshops were excellent and the luxury lodges provided perfect comfort after long days exploring.",
+      trip: "Iceland Northern Lights"
+    }
+  ];
+
+  const blogPosts = [
+    {
+      id: 1,
+      title: "10 Hidden Gems in Southeast Asia",
+      excerpt: "Discover untouched paradise destinations that most travelers never find...",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=250&fit=crop",
+      author: "Travel Team",
+      date: "March 15, 2024",
+      readTime: "5 min read",
+      category: "Destinations"
+    },
+    {
+      id: 2,
+      title: "Luxury Travel Trends 2024",
+      excerpt: "The future of high-end travel includes sustainable luxury and unique experiences...",
+      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400&h=250&fit=crop",
+      author: "Sarah Wilson",
+      date: "March 12, 2024",
+      readTime: "7 min read",
+      category: "Travel Tips"
+    },
+    {
+      id: 3,
+      title: "Photography Guide: Capturing Northern Lights",
+      excerpt: "Professional tips from our expert photographers on getting the perfect aurora shot...",
+      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=400&h=250&fit=crop",
+      author: "Mike Photography",
+      date: "March 10, 2024",
+      readTime: "6 min read",
+      category: "Photography"
+    }
+  ];
+
+  const specialOffers = [
+    {
+      id: 1,
+      title: "Early Bird Special",
+      description: "Book 3 months in advance and save up to 25%",
+      discount: "25% OFF",
+      validUntil: "April 30, 2024",
+      terms: "Valid for select destinations"
+    },
+    {
+      id: 2,
+      title: "Group Booking Discount",
+      description: "Travel with 6+ friends and enjoy exclusive rates",
+      discount: "30% OFF",
+      validUntil: "Year Round",
+      terms: "Minimum 6 travelers"
+    },
+    {
+      id: 3,
+      title: "Honeymoon Package",
+      description: "Romantic getaways with special amenities",
+      discount: "20% OFF",
+      validUntil: "Dec 31, 2024",
+      terms: "Plus complimentary upgrades"
+    }
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Award,
+      title: "25+ Years Experience",
+      description: "Industry-leading expertise with award-winning service since 1999"
+    },
+    {
+      icon: Shield,
+      title: "100% Protected",
+      description: "Full financial protection and comprehensive travel insurance included"
+    },
+    {
+      icon: Headphones,
+      title: "24/7 Support",
+      description: "Round-the-clock assistance from our dedicated travel specialists"
+    },
+    {
+      icon: Users,
+      title: "Local Experts",
+      description: "Native guides with deep knowledge of destinations and cultures"
+    },
+    {
+      icon: Star,
+      title: "Luxury Standards",
+      description: "Handpicked accommodations and experiences meeting highest quality standards"
     },
     {
       icon: Globe,
-      title: "Cultural Immersion",
-      description: "Experience unique cultures of different regions"
-    },
-    {
-      icon: Compass,
-      title: "Custom Exploration",
-      description: "Flexible itineraries tailored to your preferences"
+      title: "Global Network",
+      description: "Partnerships worldwide ensuring seamless travel experiences"
     }
   ];
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
+      {/* Enhanced Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img 
@@ -90,94 +226,172 @@ const Home = () => {
             alt="Hero background"
             className="w-full h-full object-cover transition-all duration-1000"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
         </div>
         
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
+            <div className="max-w-4xl">
+              <Badge className="bg-orange-500/20 text-orange-300 border-orange-400 mb-6 text-lg px-4 py-2">
+                Premium Travel Experiences
+              </Badge>
+              <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in">
                 {heroSlides[currentSlide].title}
               </h1>
-              <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in">
+              <p className="text-2xl md:text-3xl text-gray-200 mb-8 animate-fade-in">
                 {heroSlides[currentSlide].subtitle}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+              <div className="flex flex-col sm:flex-row gap-6 animate-fade-in">
                 <Link to="/destinations">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
-                    <Compass className="w-5 h-5 mr-2" />
-                    Explore Destinations
+                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 text-xl">
+                    <Compass className="w-6 h-6 mr-3" />
+                    {heroSlides[currentSlide].cta}
                   </Button>
                 </Link>
-                <Link to="/services">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg">
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Our Services
-                  </Button>
-                </Link>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-10 py-6 text-xl">
+                  <Play className="w-6 h-6 mr-3" />
+                  Watch Our Story
+                </Button>
+              </div>
+              
+              {/* Quick Stats */}
+              <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-white mb-2">120+</div>
+                  <div className="text-gray-300">Destinations</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-white mb-2">25K+</div>
+                  <div className="text-gray-300">Happy Travelers</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-white mb-2">4.9★</div>
+                  <div className="text-gray-300">Average Rating</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Slide indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {/* Enhanced slide indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
           {heroSlides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentSlide === index ? 'bg-orange-500' : 'bg-white/50'
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                currentSlide === index 
+                  ? 'bg-orange-500 w-12' 
+                  : 'bg-white/50 hover:bg-white/70'
               }`}
             />
           ))}
         </div>
       </section>
 
-      {/* Featured Destinations */}
-      <section className="py-20 bg-gray-50">
+      {/* Special Offers Banner */}
+      <section className="py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge className="bg-orange-100 text-orange-600 mb-4">Featured Destinations</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Amazing Journeys
+          <div className="flex items-center justify-center space-x-8 text-center">
+            <div className="flex items-center space-x-2">
+              <TrendingUp className="w-5 h-5" />
+              <span className="font-semibold">Limited Time: Save up to 30% on Group Bookings!</span>
+            </div>
+            <Button size="sm" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-500">
+              View Offers
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Featured Destinations */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <Badge className="bg-orange-100 text-orange-600 mb-6 text-lg px-4 py-2">
+              Handpicked Destinations
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+              Luxury Travel Experiences
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the world's most beautiful destinations with professional service and premium experiences
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Discover the world's most extraordinary destinations with our premium, all-inclusive packages
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid lg:grid-cols-3 gap-10 mb-16">
             {featuredDestinations.map((destination) => (
-              <Card key={destination.id} className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <Card key={destination.id} className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg">
                 <div className="relative overflow-hidden">
                   <img 
                     src={destination.image} 
                     alt={destination.name}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-orange-500 text-white">
+                  <div className="absolute top-6 left-6 flex flex-col gap-2">
+                    <Badge className="bg-orange-500 text-white shadow-lg">
                       <Star className="w-3 h-3 mr-1 fill-current" />
-                      {destination.rating}
+                      {destination.rating} ({destination.reviews})
+                    </Badge>
+                    <Badge className="bg-green-500 text-white shadow-lg">
+                      SAVE ${(parseInt(destination.originalPrice.replace('$', '').replace(',', '')) - parseInt(destination.price.replace('$', '').replace(',', ''))).toLocaleString()}
                     </Badge>
                   </div>
+                  <div className="absolute top-6 right-6">
+                    <Button size="sm" variant="outline" className="bg-white/90 hover:bg-white">
+                      <Heart className="w-4 h-4" />
+                    </Button>
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex flex-wrap gap-2">
+                      {destination.highlights.map((highlight, idx) => (
+                        <Badge key={idx} variant="secondary" className="bg-black/50 text-white border-0">
+                          {highlight}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{destination.name}</h3>
-                  <p className="text-gray-600 mb-4">{destination.description}</p>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center text-gray-500">
+                <CardContent className="p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-800 mb-2">{destination.name}</h3>
+                      <p className="text-gray-600 mb-4 leading-relaxed">{destination.description}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-6 text-sm text-gray-500">
+                    <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-2" />
                       <span>{destination.duration}</span>
                     </div>
-                    <div className="text-2xl font-bold text-orange-500">
-                      {destination.price}
+                    <div className="flex items-center">
+                      <Users className="w-4 h-4 mr-2" />
+                      <span>{destination.groupSize}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Mountain className="w-4 h-4 mr-2" />
+                      <span>{destination.difficulty}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      <span>Premium Location</span>
                     </div>
                   </div>
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                    <Heart className="w-4 h-4 mr-2" />
-                    View Details
+
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-3xl font-bold text-orange-500">{destination.price}</span>
+                        <span className="text-lg text-gray-400 line-through">{destination.originalPrice}</span>
+                      </div>
+                      <div className="text-sm text-gray-500">per person</div>
+                    </div>
+                  </div>
+                  
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-6 text-lg">
+                    <ArrowRight className="w-5 h-5 mr-2" />
+                    View Details & Book
                   </Button>
                 </CardContent>
               </Card>
@@ -186,87 +400,231 @@ const Home = () => {
 
           <div className="text-center">
             <Link to="/destinations">
-              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white">
-                View All Destinations
+              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 text-lg">
+                Explore All Destinations
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Experiences Section */}
-      <section className="py-20 bg-white">
+      {/* Why Choose Us Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-600 mb-4">Why Choose Us</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Unique Experiences
+          <div className="text-center mb-20">
+            <Badge className="bg-blue-100 text-blue-600 mb-6 text-lg px-4 py-2">
+              Why Choose Us
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+              Unmatched Excellence
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We provide unique and unforgettable travel experiences for every journey
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              We've been crafting extraordinary travel experiences for over two decades
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {experiences.map((experience, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <experience.icon className="w-10 h-10 text-white" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {whyChooseUs.map((item, index) => (
+              <div key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center group-hover:shadow-2xl transition-shadow duration-300">
+                  <item.icon className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{experience.title}</h3>
-                <p className="text-gray-600">{experience.description}</p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white">
+      {/* Customer Testimonials */}
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="group">
-              <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">15+</div>
-              <div className="text-orange-100 text-lg">Years Experience</div>
-            </div>
-            <div className="group">
-              <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-              <div className="text-orange-100 text-lg">Destinations</div>
-            </div>
-            <div className="group">
-              <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">10K+</div>
-              <div className="text-orange-100 text-lg">Happy Customers</div>
-            </div>
-            <div className="group">
-              <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">4.9★</div>
-              <div className="text-orange-100 text-lg">Average Rating</div>
-            </div>
+          <div className="text-center mb-20">
+            <Badge className="bg-green-100 text-green-600 mb-6 text-lg px-4 py-2">
+              Client Testimonials
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+              What Our Travelers Say
+            </h2>
+          </div>
+
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              {testimonials.map((testimonial) => (
+                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/1">
+                  <Card className="border-0 shadow-lg h-full">
+                    <CardContent className="p-10">
+                      <Quote className="w-12 h-12 text-orange-400 mb-6" />
+                      <p className="text-xl text-gray-700 mb-8 leading-relaxed italic">
+                        "{testimonial.text}"
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-4">
+                          <img 
+                            src={testimonial.image} 
+                            alt={testimonial.name}
+                            className="w-16 h-16 rounded-full object-cover"
+                          />
+                          <div>
+                            <h4 className="font-bold text-gray-800 text-lg">{testimonial.name}</h4>
+                            <p className="text-gray-500">{testimonial.location}</p>
+                            <p className="text-orange-500 font-medium">{testimonial.trip}</p>
+                          </div>
+                        </div>
+                        <div className="flex space-x-1">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Special Offers */}
+      <section className="py-24 bg-gradient-to-br from-orange-500 to-red-600 text-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Exclusive Offers
+            </h2>
+            <p className="text-2xl text-orange-100 max-w-3xl mx-auto">
+              Limited-time deals on our most popular destinations
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {specialOffers.map((offer) => (
+              <Card key={offer.id} className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-colors duration-300">
+                <CardHeader className="text-center">
+                  <div className="text-4xl font-bold text-orange-200 mb-2">{offer.discount}</div>
+                  <CardTitle className="text-2xl mb-2">{offer.title}</CardTitle>
+                  <p className="text-orange-100">{offer.description}</p>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <div className="mb-4">
+                    <p className="text-sm text-orange-200 mb-1">Valid until: {offer.validUntil}</p>
+                    <p className="text-xs text-orange-300">{offer.terms}</p>
+                  </div>
+                  <Button className="bg-white text-orange-500 hover:bg-orange-100">
+                    Claim Offer
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready for Your Next Adventure?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let us help you create the most memorable experiences of your lifetime
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
-                <MapPin className="w-5 h-5 mr-2" />
-                Free Consultation
-              </Button>
-            </Link>
-            <Link to="/about">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg">
-                <Users className="w-5 h-5 mr-2" />
-                About Us
-              </Button>
-            </Link>
+      {/* Travel Blog */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge className="bg-purple-100 text-purple-600 mb-6 text-lg px-4 py-2">
+              Travel Insights
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+              Latest Travel Stories
+            </h2>
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
+              Expert insights, destination guides, and travel inspiration
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            {blogPosts.map((post) => (
+              <Card key={post.id} className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-orange-500 text-white">
+                    {post.category}
+                  </Badge>
+                </div>
+                <CardContent className="p-8">
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <span>{post.author}</span>
+                    <span className="mx-2">•</span>
+                    <span>{post.date}</span>
+                    <span className="mx-2">•</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-orange-500 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6">{post.excerpt}</p>
+                  <Button variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white">
+                    Read More
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white">
+              View All Articles
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-24 bg-gray-900 text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Ready for Your Dream Adventure?
+            </h2>
+            <p className="text-2xl text-gray-300 mb-12 leading-relaxed">
+              Let our travel specialists create a personalized itinerary just for you
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center">
+                <Phone className="w-12 h-12 mx-auto mb-4 text-orange-400" />
+                <h3 className="text-xl font-semibold mb-2">Call Us</h3>
+                <p className="text-gray-300">+1 (555) 123-4567</p>
+              </div>
+              <div className="text-center">
+                <Mail className="w-12 h-12 mx-auto mb-4 text-orange-400" />
+                <h3 className="text-xl font-semibold mb-2">Email Us</h3>
+                <p className="text-gray-300">hello@luxurytravel.com</p>
+              </div>
+              <div className="text-center">
+                <Clock className="w-12 h-12 mx-auto mb-4 text-orange-400" />
+                <h3 className="text-xl font-semibold mb-2">Available</h3>
+                <p className="text-gray-300">24/7 Support</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link to="/contact">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 text-xl">
+                  <MapPin className="w-6 h-6 mr-3" />
+                  Get Free Consultation
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-10 py-6 text-xl">
+                  <Users className="w-6 h-6 mr-3" />
+                  About Our Company
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
