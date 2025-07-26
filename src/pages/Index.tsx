@@ -12,71 +12,71 @@ const Index = () => {
   const heroSlides = [
     {
       image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-      title: "Khám Phá Thế Giới Cùng Chúng Tôi",
-      subtitle: "Những hành trình khó quên, trải nghiệm độc đáo"
+      title: "Explore the World with Us",
+      subtitle: "Unforgettable journeys, unique experiences"
     },
     {
       image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
-      title: "Thiên Nhiên Hoang Dã Đang Chờ Bạn",
-      subtitle: "Từ núi cao đến đại dương xanh thẳm"
+      title: "Wild Nature Awaits You",
+      subtitle: "From high mountains to deep blue oceans"
     },
     {
       image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
-      title: "Những Cuộc Phiêu Lưu Không Giới Hạn",
-      subtitle: "Tạo nên những kỷ niệm đáng nhớ nhất"
+      title: "Unlimited Adventures",
+      subtitle: "Creating the most memorable experiences"
     }
   ];
 
   const destinations = [
     {
       id: 1,
-      name: "Thụy Sĩ Alps",
+      name: "Swiss Alps",
       image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
-      price: "45,900,000",
-      duration: "7 ngày 6 đêm",
+      price: "$2,890",
+      duration: "7 days 6 nights",
       rating: 4.9,
-      description: "Khám phá vẻ đẹp hùng vĩ của dãy Alps"
+      description: "Discover the majestic beauty of the Alps"
     },
     {
       id: 2,
       name: "Maldives",
       image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
-      price: "52,800,000",
-      duration: "5 ngày 4 đêm",
+      price: "$3,320",
+      duration: "5 days 4 nights",
       rating: 4.8,
-      description: "Thiên đường nhiệt đới với nước biển trong vắt"
+      description: "Tropical paradise with crystal clear waters"
     },
     {
       id: 3,
       name: "Iceland",
       image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-      price: "38,500,000",
-      duration: "6 ngày 5 đêm",
+      price: "$2,420",
+      duration: "6 days 5 nights",
       rating: 4.7,
-      description: "Đất nước băng giá với Aurora borealis"
+      description: "Land of ice and fire with Aurora Borealis"
     }
   ];
 
   const experiences = [
     {
       icon: Mountain,
-      title: "Phiêu Lưu Mạo Hiểm",
-      description: "Leo núi, trekking và khám phá những địa điểm hoang dã"
+      title: "Adventure Travel",
+      description: "Mountain climbing, trekking and exploring wild destinations"
     },
     {
       icon: Camera,
       title: "Photography Tours",
-      description: "Chụp ảnh những khoảnh khắc tuyệt đẹp nhất"
+      description: "Capture the most beautiful moments of your journey"
     },
     {
       icon: Globe,
-      title: "Văn Hóa Bản Địa",
-      description: "Trải nghiệm văn hóa độc đáo của từng vùng miền"
+      title: "Cultural Immersion",
+      description: "Experience unique cultures of different regions"
     },
     {
       icon: Compass,
-      title: "Khám Phá Tự Do",
-      description: "Lịch trình linh hoạt theo sở thích cá nhân"
+      title: "Custom Exploration",
+      description: "Flexible itineraries tailored to your preferences"
     }
   ];
 
@@ -91,14 +91,14 @@ const Index = () => {
               <span className="text-2xl font-bold text-gray-800">Wanderlust Travel</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Trang Chủ</a>
-              <a href="#destinations" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Điểm Đến</a>
+              <a href="#home" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Home</a>
+              <a href="#destinations" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Destinations</a>
               <a href="#tours" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Tours</a>
-              <a href="#about" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Về Chúng Tôi</a>
-              <a href="#contact" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Liên Hệ</a>
+              <a href="#about" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">About Us</a>
+              <a href="#contact" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Contact</a>
             </div>
             <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-              Đặt Tour Ngay
+              Book Now
             </Button>
           </div>
         </div>
@@ -127,11 +127,11 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
                   <Compass className="w-5 h-5 mr-2" />
-                  Khám Phá Ngay
+                  Explore Now
                 </Button>
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg">
                   <Calendar className="w-5 h-5 mr-2" />
-                  Xem Lịch Trình
+                  View Itinerary
                 </Button>
               </div>
             </div>
@@ -156,12 +156,12 @@ const Index = () => {
       <section id="destinations" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="bg-orange-100 text-orange-600 mb-4">Điểm Đến Nổi Bật</Badge>
+            <Badge className="bg-orange-100 text-orange-600 mb-4">Featured Destinations</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Những Hành Trình Tuyệt Vời
+              Amazing Journeys
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Khám phá những điểm đến tuyệt đẹp nhất thế giới với dịch vụ chuyên nghiệp và trải nghiệm đẳng cấp
+              Discover the world's most beautiful destinations with professional service and premium experiences
             </p>
           </div>
 
@@ -191,12 +191,12 @@ const Index = () => {
                       <span>{destination.duration}</span>
                     </div>
                     <div className="text-2xl font-bold text-orange-500">
-                      {destination.price}đ
+                      {destination.price}
                     </div>
                   </div>
                   <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
                     <Heart className="w-4 h-4 mr-2" />
-                    Yêu Thích
+                    Add to Wishlist
                   </Button>
                 </CardContent>
               </Card>
@@ -209,12 +209,12 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-600 mb-4">Trải Nghiệm Độc Đáo</Badge>
+            <Badge className="bg-blue-100 text-blue-600 mb-4">Unique Experiences</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Tại Sao Chọn Chúng Tôi?
+              Why Choose Us?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Chúng tôi mang đến những trải nghiệm du lịch độc đáo và đáng nhớ nhất cho mỗi hành trình
+              We provide unique and unforgettable travel experiences for every journey
             </p>
           </div>
 
@@ -238,19 +238,19 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="group">
               <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">15+</div>
-              <div className="text-orange-100 text-lg">Năm Kinh Nghiệm</div>
+              <div className="text-orange-100 text-lg">Years Experience</div>
             </div>
             <div className="group">
               <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-              <div className="text-orange-100 text-lg">Điểm Đến</div>
+              <div className="text-orange-100 text-lg">Destinations</div>
             </div>
             <div className="group">
               <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">10K+</div>
-              <div className="text-orange-100 text-lg">Khách Hàng Hài Lòng</div>
+              <div className="text-orange-100 text-lg">Happy Customers</div>
             </div>
             <div className="group">
               <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">4.9★</div>
-              <div className="text-orange-100 text-lg">Đánh Giá Trung Bình</div>
+              <div className="text-orange-100 text-lg">Average Rating</div>
             </div>
           </div>
         </div>
@@ -260,19 +260,19 @@ const Index = () => {
       <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Sẵn Sàng Cho Cuộc Phiêu Lưu Tiếp Theo?
+            Ready for Your Next Adventure?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Hãy để chúng tôi giúp bạn tạo nên những kỷ niệm đáng nhớ nhất trong cuộc đời
+            Let us help you create the most memorable experiences of your lifetime
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
               <MapPin className="w-5 h-5 mr-2" />
-              Tư Vấn Miễn Phí
+              Free Consultation
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg">
               <Users className="w-5 h-5 mr-2" />
-              Liên Hệ Ngay
+              Contact Us
             </Button>
           </div>
         </div>
@@ -288,39 +288,39 @@ const Index = () => {
                 <span className="text-2xl font-bold">Wanderlust Travel</span>
               </div>
               <p className="text-gray-300 mb-4">
-                Đồng hành cùng bạn khám phá thế giới với những trải nghiệm độc đáo và đáng nhớ nhất.
+                Join us in exploring the world with unique and memorable experiences.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4">Dịch Vụ</h3>
+              <h3 className="text-lg font-bold mb-4">Services</h3>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Tour Trong Nước</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Tour Quốc Tế</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Tour Honeymoon</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Tour Doanh Nghiệp</a></li>
+                <li><a href="#" className="hover:text-orange-400 transition-colors">Domestic Tours</a></li>
+                <li><a href="#" className="hover:text-orange-400 transition-colors">International Tours</a></li>
+                <li><a href="#" className="hover:text-orange-400 transition-colors">Honeymoon Packages</a></li>
+                <li><a href="#" className="hover:text-orange-400 transition-colors">Corporate Tours</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4">Hỗ Trợ</h3>
+              <h3 className="text-lg font-bold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Trung Tâm Trợ Giúp</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Điều Khoản</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Chính Sách</a></li>
+                <li><a href="#" className="hover:text-orange-400 transition-colors">Help Center</a></li>
+                <li><a href="#" className="hover:text-orange-400 transition-colors">Terms & Conditions</a></li>
+                <li><a href="#" className="hover:text-orange-400 transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="hover:text-orange-400 transition-colors">FAQ</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4">Liên Hệ</h3>
+              <h3 className="text-lg font-bold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-300">
-                <p>📧 info@wanderlusttravel.vn</p>
-                <p>📱 1900 1234 567</p>
-                <p>📍 123 Đường ABC, Quận 1, TP.HCM</p>
+                <p>📧 info@wanderlusttravel.com</p>
+                <p>📱 +1 (555) 123-4567</p>
+                <p>📍 123 Adventure St, Explorer City, EX 12345</p>
               </div>
             </div>
           </div>
           <Separator className="my-8 bg-gray-700" />
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 Wanderlust Travel. Tất cả quyền được bảo lưu.</p>
+            <p>&copy; 2024 Wanderlust Travel. All rights reserved.</p>
           </div>
         </div>
       </footer>
