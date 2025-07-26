@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { MapPin, Calendar, Users, Star, Plane, Camera, Mountain, Compass, Heart, Globe } from "lucide-react";
+import { MapPin, Calendar, Users, Star, Compass, Heart, Globe, Mountain, Camera } from "lucide-react";
+import { Link } from 'react-router-dom';
 
-const Index = () => {
+const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
@@ -27,7 +27,7 @@ const Index = () => {
     }
   ];
 
-  const destinations = [
+  const featuredDestinations = [
     {
       id: 1,
       name: "Swiss Alps",
@@ -81,31 +81,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Plane className="w-8 h-8 text-orange-500" />
-              <span className="text-2xl font-bold text-gray-800">Wanderlust Travel</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Home</a>
-              <a href="#destinations" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Destinations</a>
-              <a href="#tours" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Tours</a>
-              <a href="#about" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">About Us</a>
-              <a href="#contact" className="text-gray-600 hover:text-orange-500 transition-colors font-medium">Contact</a>
-            </div>
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-              Book Now
-            </Button>
-          </div>
-        </div>
-      </nav>
-
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section id="home" className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src={heroSlides[currentSlide].image} 
@@ -125,14 +103,18 @@ const Index = () => {
                 {heroSlides[currentSlide].subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
-                  <Compass className="w-5 h-5 mr-2" />
-                  Explore Now
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  View Itinerary
-                </Button>
+                <Link to="/destinations">
+                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
+                    <Compass className="w-5 h-5 mr-2" />
+                    Explore Destinations
+                  </Button>
+                </Link>
+                <Link to="/services">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg">
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Our Services
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -153,7 +135,7 @@ const Index = () => {
       </section>
 
       {/* Featured Destinations */}
-      <section id="destinations" className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge className="bg-orange-100 text-orange-600 mb-4">Featured Destinations</Badge>
@@ -165,8 +147,8 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {destinations.map((destination) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {featuredDestinations.map((destination) => (
               <Card key={destination.id} className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative overflow-hidden">
                   <img 
@@ -180,7 +162,6 @@ const Index = () => {
                       {destination.rating}
                     </Badge>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">{destination.name}</h3>
@@ -196,11 +177,19 @@ const Index = () => {
                   </div>
                   <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
                     <Heart className="w-4 h-4 mr-2" />
-                    Add to Wishlist
+                    View Details
                   </Button>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/destinations">
+              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white">
+                View All Destinations
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -209,9 +198,9 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-600 mb-4">Unique Experiences</Badge>
+            <Badge className="bg-blue-100 text-blue-600 mb-4">Why Choose Us</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Why Choose Us?
+              Unique Experiences
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We provide unique and unforgettable travel experiences for every journey
@@ -266,66 +255,23 @@ const Index = () => {
             Let us help you create the most memorable experiences of your lifetime
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
-              <MapPin className="w-5 h-5 mr-2" />
-              Free Consultation
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg">
-              <Users className="w-5 h-5 mr-2" />
-              Contact Us
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
+                <MapPin className="w-5 h-5 mr-2" />
+                Free Consultation
+              </Button>
+            </Link>
+            <Link to="/about">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg">
+                <Users className="w-5 h-5 mr-2" />
+                About Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-6">
-                <Plane className="w-8 h-8 text-orange-500" />
-                <span className="text-2xl font-bold">Wanderlust Travel</span>
-              </div>
-              <p className="text-gray-300 mb-4">
-                Join us in exploring the world with unique and memorable experiences.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Domestic Tours</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">International Tours</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Honeymoon Packages</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Corporate Tours</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Terms & Conditions</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">FAQ</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <p>📧 info@wanderlusttravel.com</p>
-                <p>📱 +1 (555) 123-4567</p>
-                <p>📍 123 Adventure St, Explorer City, EX 12345</p>
-              </div>
-            </div>
-          </div>
-          <Separator className="my-8 bg-gray-700" />
-          <div className="text-center text-gray-400">
-            <p>&copy; 2024 Wanderlust Travel. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
 
-export default Index;
+export default Home;
