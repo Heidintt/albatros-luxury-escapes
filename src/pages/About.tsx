@@ -20,13 +20,13 @@ const About = () => {
       number: "15+", 
       label: "Years in Business", 
       icon: Calendar,
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1"
     },
     { 
       number: "50+", 
       label: "Countries Covered", 
       icon: Globe,
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828"
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
     },
     { 
       number: "10,000+", 
@@ -38,7 +38,7 @@ const About = () => {
       number: "4.9", 
       label: "Average Rating", 
       icon: Star,
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306"
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828"
     }
   ];
 
@@ -46,25 +46,25 @@ const About = () => {
     {
       title: "Passion for Travel",
       description: "We live and breathe travel, sharing our passion with every client to create unforgettable experiences.",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42d",
       gradient: "from-orange-500 to-red-500"
     },
     {
       title: "Trust & Safety",
       description: "Your safety and security are our top priorities. We partner with trusted providers worldwide.",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42d",
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
       gradient: "from-blue-500 to-cyan-500"
     },
     {
       title: "Excellence",
       description: "We strive for excellence in every detail, from planning to execution of your perfect journey.",
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4",
       gradient: "from-green-500 to-emerald-500"
     },
     {
       title: "Global Expertise",
       description: "Our worldwide network of local partners ensures authentic and seamless travel experiences.",
-      image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
       gradient: "from-purple-500 to-pink-500"
     }
   ];
@@ -111,13 +111,13 @@ const About = () => {
       year: "2012",
       title: "International Expansion",
       description: "Extended our services to cover destinations across all continents.",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828"
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42d"
     },
     {
       year: "2015",
       title: "Award Recognition",
       description: "Received 'Best Travel Agency' award from International Travel Association.",
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306"
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828"
     },
     {
       year: "2018",
@@ -135,7 +135,7 @@ const About = () => {
       year: "2024",
       title: "15th Anniversary",
       description: "Celebrating 15 years of creating extraordinary travel experiences.",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42d"
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
     }
   ];
 
@@ -166,7 +166,7 @@ const About = () => {
       <section className="relative h-[600px] bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" 
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42d" 
             alt="About us background"
             className="w-full h-full object-cover opacity-40"
           />
@@ -240,7 +240,7 @@ const About = () => {
               <div className="relative">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1488646953014-85cb44e25828" 
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" 
                     alt="Our story"
                     className="w-full h-full object-cover"
                   />
@@ -430,7 +430,7 @@ const About = () => {
       <section className="py-20 bg-gradient-to-r from-orange-500 to-pink-500 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42d" 
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" 
             alt="CTA background"
             className="w-full h-full object-cover opacity-20"
           />
