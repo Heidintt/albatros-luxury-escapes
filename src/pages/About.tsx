@@ -3,14 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Award, 
-  Users, 
-  Globe, 
-  Heart, 
+  Calendar,
+  Globe,
+  Users,
   Star,
   MapPin,
-  Calendar,
-  Shield,
+  Award,
   Target,
   Eye,
   Compass
@@ -18,32 +16,56 @@ import {
 
 const About = () => {
   const stats = [
-    { number: "15+", label: "Years in Business", icon: Calendar },
-    { number: "50+", label: "Countries Covered", icon: Globe },
-    { number: "10,000+", label: "Happy Travelers", icon: Users },
-    { number: "4.9", label: "Average Rating", icon: Star }
+    { 
+      number: "15+", 
+      label: "Years in Business", 
+      icon: Calendar,
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
+    },
+    { 
+      number: "50+", 
+      label: "Countries Covered", 
+      icon: Globe,
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828"
+    },
+    { 
+      number: "10,000+", 
+      label: "Happy Travelers", 
+      icon: Users,
+      image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e"
+    },
+    { 
+      number: "4.9", 
+      label: "Average Rating", 
+      icon: Star,
+      image: "https://images.unsplash.com/photo-1551632811-561732d1e306"
+    }
   ];
 
   const values = [
     {
-      icon: Heart,
       title: "Passion for Travel",
-      description: "We live and breathe travel, sharing our passion with every client to create unforgettable experiences."
+      description: "We live and breathe travel, sharing our passion with every client to create unforgettable experiences.",
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828",
+      gradient: "from-orange-500 to-red-500"
     },
     {
-      icon: Shield,
       title: "Trust & Safety",
-      description: "Your safety and security are our top priorities. We partner with trusted providers worldwide."
+      description: "Your safety and security are our top priorities. We partner with trusted providers worldwide.",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42d",
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Award,
       title: "Excellence",
-      description: "We strive for excellence in every detail, from planning to execution of your perfect journey."
+      description: "We strive for excellence in every detail, from planning to execution of your perfect journey.",
+      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
+      gradient: "from-green-500 to-emerald-500"
     },
     {
-      icon: Globe,
       title: "Global Expertise",
-      description: "Our worldwide network of local partners ensures authentic and seamless travel experiences."
+      description: "Our worldwide network of local partners ensures authentic and seamless travel experiences.",
+      image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
+      gradient: "from-purple-500 to-pink-500"
     }
   ];
 
@@ -52,25 +74,29 @@ const About = () => {
       name: "Sarah Johnson",
       position: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b1ac",
-      bio: "With 20+ years in the travel industry, Sarah founded Wanderlust Travel to share her passion for exploration."
+      bio: "With 20+ years in the travel industry, Sarah founded Wanderlust Travel to share her passion for exploration.",
+      destination: "Santorini, Greece"
     },
     {
       name: "Michael Chen",
       position: "Head of Operations",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
-      bio: "Michael ensures every trip runs smoothly with his attention to detail and operational expertise."
+      bio: "Michael ensures every trip runs smoothly with his attention to detail and operational expertise.",
+      destination: "Tokyo, Japan"
     },
     {
       name: "Emily Rodriguez",
       position: "Senior Travel Designer",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
-      bio: "Emily crafts personalized itineraries that capture the essence of each destination and traveler's dreams."
+      bio: "Emily crafts personalized itineraries that capture the essence of each destination and traveler's dreams.",
+      destination: "Patagonia, Chile"
     },
     {
       name: "David Thompson",
       position: "Adventure Specialist",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
-      bio: "David leads our adventure travel division, bringing thrilling experiences safely to adventurous souls."
+      bio: "David leads our adventure travel division, bringing thrilling experiences safely to adventurous souls.",
+      destination: "Nepal Himalayas"
     }
   ];
 
@@ -78,67 +104,118 @@ const About = () => {
     {
       year: "2009",
       title: "Company Founded",
-      description: "Started with a dream to make travel accessible and memorable for everyone."
+      description: "Started with a dream to make travel accessible and memorable for everyone.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
     },
     {
       year: "2012",
       title: "International Expansion",
-      description: "Extended our services to cover destinations across all continents."
+      description: "Extended our services to cover destinations across all continents.",
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828"
     },
     {
       year: "2015",
       title: "Award Recognition",
-      description: "Received 'Best Travel Agency' award from International Travel Association."
+      description: "Received 'Best Travel Agency' award from International Travel Association.",
+      image: "https://images.unsplash.com/photo-1551632811-561732d1e306"
     },
     {
       year: "2018",
       title: "Digital Innovation",
-      description: "Launched our digital platform for seamless booking and trip management."
+      description: "Launched our digital platform for seamless booking and trip management.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
     },
     {
       year: "2021",
       title: "Sustainable Travel",
-      description: "Introduced eco-friendly travel options and carbon offset programs."
+      description: "Introduced eco-friendly travel options and carbon offset programs.",
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e"
     },
     {
       year: "2024",
       title: "15th Anniversary",
-      description: "Celebrating 15 years of creating extraordinary travel experiences."
+      description: "Celebrating 15 years of creating extraordinary travel experiences.",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42d"
+    }
+  ];
+
+  const missionVision = [
+    {
+      title: "Our Mission",
+      description: "To inspire and enable meaningful travel experiences that broaden perspectives, create lasting memories, and foster cultural understanding across the globe.",
+      image: "https://images.unsplash.com/photo-1469041797191-50ace28483c3",
+      gradient: "from-emerald-500 to-teal-500"
+    },
+    {
+      title: "Our Vision",
+      description: "To be the world's most trusted travel partner, known for creating extraordinary journeys that transform travelers and positively impact the destinations we visit.",
+      image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369",
+      gradient: "from-blue-500 to-indigo-500"
+    },
+    {
+      title: "Our Values",
+      description: "Authenticity, sustainability, and excellence guide every decision we make, ensuring each journey respects local cultures and preserves destinations for future generations.",
+      image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
+      gradient: "from-purple-500 to-violet-500"
     }
   ];
 
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center">
+      <section className="relative h-[600px] bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" 
             alt="About us background"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-40"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"></div>
         </div>
-        <div className="relative z-10 container mx-auto px-6 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            About Wanderlust Travel
-          </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-            Crafting extraordinary journeys for adventurous souls since 2009
-          </p>
+        <div className="relative z-10 container mx-auto px-6">
+          <div className="max-w-4xl">
+            <Badge className="bg-white/20 text-white border-white/30 mb-6 text-sm">
+              About Wanderlust Travel
+            </Badge>
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white leading-tight">
+              Crafting Dreams Into
+              <span className="block bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+                Reality
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
+              15 years of creating extraordinary journeys for adventurous souls who dare to explore the world's hidden treasures
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
+                Our Story
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg">
+                Meet the Team
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
+      {/* Stats Section with Images */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="group">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="w-8 h-8 text-white" />
+              <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <img 
+                    src={stat.image} 
+                    alt={stat.label}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 </div>
-                <div className="text-4xl font-bold text-gray-800 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-4xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-white/90 font-medium">{stat.label}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -148,99 +225,116 @@ const About = () => {
       {/* Our Story */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <Badge className="bg-indigo-100 text-indigo-600 mb-4">Our Story</Badge>
+              <Badge className="bg-orange-100 text-orange-600 mb-4">Our Story</Badge>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                 The Journey Began
               </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                From a small dream to a global adventure company
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1488646953014-85cb44e25828" 
-                  alt="Our story"
-                  className="rounded-lg shadow-xl"
-                />
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1488646953014-85cb44e25828" 
+                    alt="Our story"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-500 rounded-full opacity-20"></div>
               </div>
-              <div>
-                <p className="text-lg text-gray-600 mb-6">
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed">
                   Founded in 2009 by Sarah Johnson, Wanderlust Travel was born from a simple belief: everyone deserves to experience the wonder of travel. After years of corporate life, Sarah left her executive position to pursue her passion for exploration and sharing that joy with others.
                 </p>
-                <p className="text-lg text-gray-600 mb-6">
+                <p className="text-lg text-gray-700 leading-relaxed">
                   What started as a small boutique travel agency has grown into a trusted partner for thousands of travelers worldwide. We've maintained our personal touch while expanding our expertise and destinations.
                 </p>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-700 leading-relaxed">
                   Today, we're proud to be recognized as industry leaders in creating personalized, meaningful travel experiences that connect people with the world's most incredible destinations.
                 </p>
+                <div className="flex items-center gap-4 pt-4">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
+                    <Award className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-800">Award-Winning Service</div>
+                    <div className="text-gray-600">Recognized globally for excellence</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission, Vision, Values */}
+      {/* Mission, Vision, Values with Images */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
-                <Target className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
-              <p className="text-gray-600">
-                To inspire and enable meaningful travel experiences that broaden perspectives, create lasting memories, and foster cultural understanding across the globe.
-              </p>
-            </div>
+          <div className="text-center mb-16">
+            <Badge className="bg-blue-100 text-blue-600 mb-4">Our Foundation</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              What Drives Us Forward
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              The core principles that guide every journey we create
+            </p>
+          </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
-                <Eye className="w-8 h-8 text-white" />
+          <div className="grid lg:grid-cols-3 gap-8">
+            {missionVision.map((item, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} opacity-80`}></div>
+                </div>
+                <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-white/90 leading-relaxed">{item.description}</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
-              <p className="text-gray-600">
-                To be the world's most trusted travel partner, known for creating extraordinary journeys that transform travelers and positively impact the destinations we visit.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center">
-                <Compass className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Values</h3>
-              <p className="text-gray-600">
-                Authenticity, sustainability, and excellence guide every decision we make, ensuring each journey respects local cultures and preserves destinations for future generations.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Core Values */}
+      {/* Core Values with Images */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge className="bg-purple-100 text-purple-600 mb-4">Our Values</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              What Drives Us
+              What Makes Us Different
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The principles that guide everything we do
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <value.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="aspect-[16/9] relative overflow-hidden">
+                  <img 
+                    src={value.image} 
+                    alt={value.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-r ${value.gradient} opacity-80`}></div>
+                </div>
+                <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
+                  <h3 className="text-2xl font-bold mb-3">{value.title}</h3>
+                  <p className="text-white/90 leading-relaxed">{value.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -250,7 +344,7 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="bg-orange-100 text-orange-600 mb-4">Our Team</Badge>
+            <Badge className="bg-green-100 text-green-600 mb-4">Our Team</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Meet the Experts
             </h2>
@@ -261,26 +355,33 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="relative overflow-hidden">
+              <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="aspect-[3/4] relative overflow-hidden">
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                 </div>
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                  <p className="text-orange-500 font-medium mb-3">{member.position}</p>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
-                </CardContent>
-              </Card>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="mb-2">
+                    <div className="text-xs text-orange-400 font-medium mb-1">
+                      <MapPin className="w-3 h-3 inline mr-1" />
+                      {member.destination}
+                    </div>
+                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                    <p className="text-orange-400 font-medium text-sm mb-2">{member.position}</p>
+                  </div>
+                  <p className="text-white/90 text-sm leading-relaxed">{member.bio}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Timeline with Images */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -293,45 +394,60 @@ const About = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-blue-200"></div>
-              
-              <div className="space-y-8">
-                {milestones.map((milestone, index) => (
-                  <div key={index} className="relative flex items-start">
-                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg z-10">
-                      {milestone.year.slice(-2)}
-                    </div>
-                    <div className="ml-6">
-                      <div className="text-blue-600 font-semibold text-sm">{milestone.year}</div>
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600">{milestone.description}</p>
+          <div className="max-w-6xl mx-auto">
+            <div className="space-y-12">
+              {milestones.map((milestone, index) => (
+                <div key={index} className={`flex items-center gap-8 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}>
+                  <div className="flex-1">
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                      <img 
+                        src={milestone.image} 
+                        alt={milestone.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
                   </div>
-                ))}
-              </div>
+                  <div className="flex-1 space-y-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        {milestone.year.slice(-2)}
+                      </div>
+                      <div>
+                        <div className="text-blue-600 font-semibold text-sm">{milestone.year}</div>
+                        <h3 className="text-2xl font-bold text-gray-800">{milestone.title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-lg leading-relaxed">{milestone.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-20 bg-gradient-to-r from-orange-500 to-pink-500 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42d" 
+            alt="CTA background"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="relative z-10 container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Create Your Story?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Join thousands of satisfied travelers who have trusted us with their dream journeys
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-4 text-lg">
-              Start Planning
+            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+              Start Planning Your Adventure
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-4 text-lg">
-              Contact Us
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
+              Contact Our Experts
             </Button>
           </div>
         </div>
