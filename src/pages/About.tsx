@@ -32,7 +32,7 @@ const About = () => {
       number: "10,000+", 
       label: "Happy Travelers", 
       icon: Users,
-      image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e"
+      image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     { 
       number: "4.9", 
@@ -46,7 +46,7 @@ const About = () => {
     {
       title: "Passion for Travel",
       description: "We live and breathe travel, sharing our passion with every client to create unforgettable experiences.",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42d",
+      image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       gradient: "from-orange-500 to-red-500"
     },
     {
@@ -73,7 +73,7 @@ const About = () => {
     {
       name: "Sarah Johnson",
       position: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b1ac",
+      image: "https://https://img.freepik.com/free-photo/medium-shot-woman-posing-indoors_23-2149915935.jpg?t=st=1753662002~exp=1753665602~hmac=94e85322e23c2d4c02949d5f5f083785c5e535ffb84e91091695ee8fc238d2f6&w=1800",
       bio: "With 20+ years in the travel industry, Sarah founded Wanderlust Travel to share her passion for exploration.",
       destination: "Santorini, Greece"
     },
@@ -111,7 +111,7 @@ const About = () => {
       year: "2012",
       title: "International Expansion",
       description: "Extended our services to cover destinations across all continents.",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42d"
+      image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1746&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       year: "2015",
