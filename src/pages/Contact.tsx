@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -90,21 +89,36 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-teal-600 to-cyan-600 flex items-center">
-        <div className="absolute inset-0">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" 
-            alt="Contact background"
-            className="w-full h-full object-cover opacity-30"
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+            alt="Travel planning"
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
-        <div className="relative z-10 container mx-auto px-6 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Get In Touch
+        
+        <div className="relative z-10 text-center text-white px-6 max-w-6xl mx-auto">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+            Let's Plan Your
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-600">
+              Dream Trip
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
             Ready to start your next adventure? We're here to help plan your perfect journey
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl">
+              <Send className="mr-2 h-5 w-5" />
+              Get In Touch
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-6 text-lg rounded-full">
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Live Chat
+            </Button>
+          </div>
         </div>
       </section>
 

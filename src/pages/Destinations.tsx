@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -141,21 +140,36 @@ const Destinations = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-blue-600 to-purple-600 flex items-center">
-        <div className="absolute inset-0">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1488646953014-85cb44e25828" 
-            alt="Destinations background"
-            className="w-full h-full object-cover opacity-30"
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e420"
+            alt="Mountain landscape"
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
-        <div className="relative z-10 container mx-auto px-6 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Discover Amazing Destinations
+        
+        <div className="relative z-10 text-center text-white px-6 max-w-6xl mx-auto">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+            Discover Amazing
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-600">
+              Destinations
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
             Explore breathtaking locations around the world with our expertly crafted travel experiences
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-pink-600 hover:from-orange-600 hover:to-pink-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl">
+              <Plane className="mr-2 h-5 w-5" />
+              Explore Now
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-6 text-lg rounded-full">
+              <Camera className="mr-2 h-5 w-5" />
+              View Gallery
+            </Button>
+          </div>
         </div>
       </section>
 
