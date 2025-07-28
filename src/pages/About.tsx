@@ -73,7 +73,7 @@ const About = () => {
     {
       name: "Sarah Johnson",
       position: "Founder & CEO",
-      image: "https://https://img.freepik.com/free-photo/medium-shot-woman-posing-indoors_23-2149915935.jpg?t=st=1753662002~exp=1753665602~hmac=94e85322e23c2d4c02949d5f5f083785c5e535ffb84e91091695ee8fc238d2f6&w=1800",
+      image: "https://images.unsplash.com/photo-1535542253001-bd384c66be54?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       bio: "With 20+ years in the travel industry, Sarah founded Wanderlust Travel to share her passion for exploration.",
       destination: "Santorini, Greece"
     },
