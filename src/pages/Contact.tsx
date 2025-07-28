@@ -57,12 +57,6 @@ const Contact = () => {
       details: ["info@wanderlusttravel.com", "support@wanderlusttravel.com", "bookings@wanderlusttravel.com"],
       color: "from-orange-400 to-orange-600"
     },
-    {
-      icon: Clock,
-      title: "Business Hours",
-      details: ["Mon - Fri: 9:00 AM - 7:00 PM", "Saturday: 10:00 AM - 5:00 PM", "Sunday: 12:00 PM - 4:00 PM"],
-      color: "from-purple-400 to-purple-600"
-    }
   ];
 
   const offices = [
