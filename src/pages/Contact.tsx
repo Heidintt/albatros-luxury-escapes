@@ -48,13 +48,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543", "24/7 Emergency Line"],
+      details: ["+1 (555) 123-4567", "24/7 Emergency Line"],
       color: "from-green-400 to-green-600"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@wanderlusttravel.com", "support@wanderlusttravel.com", "bookings@wanderlusttravel.com"],
+      details: ["support@wanderlusttravel.com", "bookings@wanderlusttravel.com"],
       color: "from-orange-400 to-orange-600"
     },
   ];
@@ -288,33 +288,6 @@ const Contact = () => {
                   </CardContent>
                 </Card>
               ))}
-
-              {/* Quick Actions */}
-              <Card className="bg-gradient-to-br from-teal-500 to-cyan-600 text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Need Immediate Help?</h3>
-                  <div className="space-y-3">
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-white text-white hover:bg-white hover:text-teal-600"
-                    >
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      Live Chat
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-white text-white hover:bg-white hover:text-teal-600"
-                    >
-                      <Calendar className="w-4 h-4 mr-2" />
-                      Book Consultation
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Office Locations */}
       <section className="py-20 bg-white">
