@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -178,32 +177,32 @@ const Home = () => {
 
   const whyChooseUs = [
     {
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=300&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=300&h=300&fit=crop",
       title: "25+ Years Experience",
       description: "Industry-leading expertise with award-winning service since 1999"
     },
     {
-      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=300&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
       title: "100% Protected",
       description: "Full financial protection and comprehensive travel insurance included"
     },
     {
-      image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=300&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=300&h=300&fit=crop",
       title: "24/7 Support",
       description: "Round-the-clock assistance from our dedicated travel specialists"
     },
     {
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=300&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=300&h=300&fit=crop",
       title: "Local Experts",
       description: "Native guides with deep knowledge of destinations and cultures"
     },
     {
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&h=300&fit=crop",
       title: "Luxury Standards",
       description: "Handpicked accommodations and experiences meeting highest quality standards"
     },
     {
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=300&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=300&h=300&fit=crop",
       title: "Global Network",
       description: "Partnerships worldwide ensuring seamless travel experiences"
     }
