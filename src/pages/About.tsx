@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,7 +10,8 @@ import {
   Award,
   Target,
   Eye,
-  Compass
+  Compass,
+  Play
 } from "lucide-react";
 
 const About = () => {
@@ -163,37 +163,37 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative h-[600px] bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42d" 
-            alt="About us background"
-            className="w-full h-full object-cover opacity-40"
+            src="https://images.unsplash.com/photo-1433086966358-54859d0ed716"
+            alt="About us hero"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
-        <div className="relative z-10 container mx-auto px-6">
-          <div className="max-w-4xl">
-            <Badge className="bg-white/20 text-white border-white/30 mb-6 text-sm">
-              About Wanderlust Travel
-            </Badge>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white leading-tight">
-              Crafting Dreams Into
-              <span className="block bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
-                Reality
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-              15 years of creating extraordinary journeys for adventurous souls who dare to explore the world's hidden treasures
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
-                Our Story
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg">
-                Meet the Team
-              </Button>
-            </div>
+        
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-6 max-w-6xl mx-auto">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+            Meet the Team Behind
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+              Your Journey
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+            15 years of creating extraordinary travel experiences with passion, expertise, and dedication to making your dreams come true
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl">
+              <Users className="mr-2 h-5 w-5" />
+              Meet Our Team
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-6 text-lg rounded-full">
+              <Play className="mr-2 h-5 w-5" />
+              Watch Our Story
+            </Button>
           </div>
         </div>
       </section>
